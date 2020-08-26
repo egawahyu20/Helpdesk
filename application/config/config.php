@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Helpdesk/';
+$config['base_url'] = 'http://localhost/helpdesk/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/Helpdesk/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -122,14 +122,14 @@ $config['subclass_prefix'] = 'MY_';
 |--------------------------------------------------------------------------
 |
 | Enabling this setting will tell CodeIgniter to look for a Composer
-| package auto-loader script in application/vendor/autoload.php.
+| package auto-loader script in application/assets/autoload.php.
 |
 |	$config['composer_autoload'] = TRUE;
 |
-| Or if you have your vendor/ directory located somewhere else, you
+| Or if you have your assets/ directory located somewhere else, you
 | can opt to set a specific path as well:
 |
-|	$config['composer_autoload'] = '/path/to/vendor/autoload.php';
+|	$config['composer_autoload'] = '/path/to/assets/autoload.php';
 |
 | For more information about Composer, please visit http://getcomposer.org/
 |
