@@ -1,0 +1,6 @@
+INI Halaman Pegawai
+
+<?php
+
+
+?>
