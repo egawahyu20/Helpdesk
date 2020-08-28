@@ -71,12 +71,6 @@
 											<input class="form-control" name="kategori" placeholder="Kategori">
 											<!-- <?php //echo form_dropdown('id_kategori',$dd_kategori, $id_kategori, ' id="id_kategori" required class="form-control"');?> -->
 					   				 	</div>
-
-									    <div class="form-group">
-											<label>Ugently / Kondisi</label>
-											<input class="form-control" name="darurat" placeholder="1 Hari Selesai">
-											<!-- <?php //echo form_dropdown('id_kondisi',$dd_kondisi, $id_kondisi, ' id="id_kondisi" required class="form-control"');?> -->
-									    </div>
 				       				</div>
 
 				        			<div class="col-md-6">
