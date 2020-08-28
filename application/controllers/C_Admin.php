@@ -5,6 +5,7 @@ class C_Admin extends CI_Controller {
 
 	function __construct()
 	{
+		parent::__construct();
 		$this->load->model('M_DB');
 	}
 
@@ -19,7 +20,7 @@ class C_Admin extends CI_Controller {
 		$data['dd_level'] = $this->M_DB->dropdown_level();
 		$data['id_level'] = $this->input->post('id_level') ? $this->input->post('id_level') : '';
 
-		$this->load->view('admin/register');
+		$this->load->view('admin/register',$data);
 	}
 
 	public function simpan()

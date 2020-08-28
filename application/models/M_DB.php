@@ -16,7 +16,7 @@ class M_DB extends CI_Model {
 		/*$sql = "SELECT * FROM level";
         $query = $this->db->query($sql);*/
 
-        $this->db->order_by('level', 'asc');
+        /*$this->db->order_by('level', 'asc');
         $query = $this->db->get('level');
 
         //return $sql;
@@ -25,12 +25,20 @@ class M_DB extends CI_Model {
 
 		foreach ($query ->result_array() as $row) {
             $value[$row->id_level] = $row->nama_level;
-		} ;      
+		} ;      */
+
+		$value = array(
+			'1' => 'Admin' ,
+			'2' => 'Karyawan' ,
+			'3' => 'Teknisi' , 
+		);
             
     	return $value;
     }
 
 	public function getmhsnilai(){
+
+		return 'JANCOK';
 		/*$this->db->select('*')
 			->from('tblmhs')
 			->join('tblnilaimhs n','m.nim=n.nim_mahasiswa','inner');
