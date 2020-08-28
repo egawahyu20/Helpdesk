@@ -26,7 +26,7 @@
 							<input type="password" class="form-control" name="password" >
 						</div>
 
-						<button type="submit" class="btn btn-primary">Simpan</button>
+						<button type="submit" class="btn btn-primary">Lanjutkan</button>
 						<a href="<?php echo base_url();?>user/user_list"  class="btn btn-default">Batal</a>
 					</form>
 				</div>
