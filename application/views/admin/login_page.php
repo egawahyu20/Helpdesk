@@ -1,53 +1,61 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Admin</title>
+ 
+    <?php $this->load->view("admin/_partials/head.php") ?>
 
-    <!-- Bootstrap core CSS-->
-    <link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gradient-primary">
+ 
+  <div class="container">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 text-center mt-5 mx-auto p-4">
-                <h1 class="h2">Login Admin</h1>
-                <p class="lead">Silahkan masuk ke Panel Admin</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-5 mx-auto mt-5">
-                <form action="<?= site_url('Login') ?>" method="POST">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Pakai username juga bisa.." required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Password.." required />
-                    </div>
-                    <div class="form-group">
-                        <div class="d-flex justify-content-between">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="rememberme" id="rememberme" />
-                                <label class="custom-control-label" for="rememberme"> Ingat Saya</label>
-                            </div>
-                            <a href="<?= site_url('reset_password') ?>">Lupa Password?</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success w-100" value="Login" />
-                    </div>
+      <!-- Outer Row -->
+      <div class="row justify-content-center">
 
-                </form>
-            </div>
-        </div>
-    </div>
+          <div class="col-lg-7">
+
+              <div class="card o-hidden border-0 shadow-lg my-5">
+                  <div class="card-body p-0">
+                      <!-- Nested Row within Card Body -->
+                      <div class="row">
+                          <div class="col-lg">
+                              <div class="p-5">
+                                  <div class="text-center">
+                                      <h1 class="h4 text-gray-900 mb-4">Login Admin!</h1>
+                                  </div>
+                                    <?php echo $this->session->flashdata('message'); ?> 
+                                  <form class="user" method="post" action="<?php echo base_url('login')?>">
+                                      <div class="form-group">
+                                          <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?php echo set_value('email') ?>"> 
+                                          <?php echo form_error('email', '<small class="text-danger pl-3">','</small>') ?>
+                                      </div>
+                                      <div class="form-group">
+                                          <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                                          <?php echo form_error('password', '<small class="text-danger pl-3">','</small>') ?>
+                                      </div>
+                                  <button type="submit" class="btn btn-primary btn-user btn-block">
+                                      Login
+                                  </button>
+                                  <hr>
+                                  <div class="text-center">
+                                      <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                  </div>
+                                  <div class="text-center">
+                                      <a class="small" href="register.html">Create an Account!</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+<?php $this->load->view("admin/_partials/js.php") ?>
 
 </body>
 
