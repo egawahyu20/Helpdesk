@@ -2,7 +2,7 @@
 
 <head>
  
-    <?php $this->load->view("admin/_partials/head.php") ?>
+    <?php $this->load->view("templates/header.php") ?>
 
 </head>
 
@@ -13,7 +13,7 @@
       <!-- Outer Row -->
       <div class="row justify-content-center">
 
-          <div class="col-lg-7">
+          <div class="col-lg-7 mt-5">
 
               <div class="card o-hidden border-0 shadow-lg my-5">
                   <div class="card-body p-0">
@@ -55,7 +55,7 @@
 
   </div>
 
-<?php $this->load->view("admin/_partials/js.php") ?>
+<?php $this->load->view("templates/admin/js.php") ?>
 
 </body>
 

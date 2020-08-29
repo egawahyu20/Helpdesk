@@ -6,7 +6,6 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        //$this->load->view('admin/_partials/head');
         $this->load->model('admin_model');
     }
 
@@ -18,33 +17,38 @@ class Login extends CI_Controller
         if($this->form_validation->run() == false){
             $this->load->view('admin/login_page');
         }else{
-            $email = $this->input->post('email');
-            $password = $this->input->post('password');
-    
-            $user = $this->admin_model->get_data_login($email);
 
-            if($user){
-                if(password_verify($password, $user['password'])){
-                    $data = ['email'=> $user['email']];
-                    $this->session->set_userdata($data);
-                    redirect('admin/overview');
-    
-                }else{
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah</div>');
-                    redirect('login');
-                }
-            }
-            else
-            {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email tidak terdaftar</div>');
-                redirect('login');
-            }
+            $this->_login();
         }
     }
 
+    private function _login(){
+
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        $user = $this->admin_model->get_data_login($email);
+
+        if($user){
+            if(password_verify($password, $user['password'])){
+                $data = ['email'=> $user['email']];
+                $this->session->set_userdata($data);
+                redirect('admin/dashboard');
+
+            }else{
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password salah</div>');
+                redirect('login');
+            }
+        }
+        else
+        {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email tidak terdaftar</div>');
+            redirect('login');
+        }
+    }
 
      public function logout(){
         $this->session->unset_userdata('email');
-        redirect('Login');
+        redirect('C_Pegawai');
     }
 }
